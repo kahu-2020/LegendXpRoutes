@@ -1,0 +1,23 @@
+body {
+    background-color: #212529 ;
+    color: aliceblue;
+  }
+h1 {
+color: #007BFF    
+}
+
+a:link {
+    color: #007BFF   ;
+  }
+  
+  a:visited {
+    color: #007BFF   ;
+  }
+
+  a:hover {
+    color: #007BFF;
+  }
+  
+  a:active {
+    color: #007BFF   ;
+  }

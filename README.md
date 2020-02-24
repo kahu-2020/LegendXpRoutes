@@ -82,8 +82,7 @@ As a user:
 
 ### Routes (Join Table M2M)
 
-  Many Users attend Many Meetings
-
+  Many Users 
  | Column Name | Data Type |
  | --- | --- |
  | route_id | Integer

@@ -1,23 +1,48 @@
 body {
     background-color: #212529 ;
     color: aliceblue;
+    background-image:url(./images/Backgrounds-download-phoenix-bird-wallpaper.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: monospace;
   }
 h1 {
-color: #007BFF    
+color: #FFA71A;
+/* font-family: 'Trade Winds' ; */
 }
 
 a:link {
-    color: #007BFF   ;
+    color: #FFA71A   ;
   }
   
   a:visited {
-    color: #007BFF   ;
+    color: #FFA71A   ;
   }
 
   a:hover {
-    color: #007BFF;
+    color: #FFA71A;
   }
   
   a:active {
-    color: #007BFF   ;
+    color: #FFA71A   ;
+  }
+  table {
+    width: 100%;
+  }
+  th {
+    text-align: start;
+    color: #FFA71A   ;
+    font-size: larger;
+
+  }
+  .container {
+    margin: 0 auto;
+    width: 80vh;
+  }
+  .panel {
+    background-color: rgba(255, 167, 26, 0.466);
+    border-radius: 25px;
+    padding: 1em;
+    color: black;
   }

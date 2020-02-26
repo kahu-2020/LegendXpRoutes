@@ -6,10 +6,15 @@ export function getallmobs() {
     .then(response => response.body);
 }
 
-export function addmobtoroute(addmob) {
-    console.log(addmob)
+export function addmobtoroute(obj) {
     return request
     .post("http://localhost:3000/api/mob/addtoxproute")
-    .send(addmob)
-    .then(response => addmob);
+    .send(obj)
+    .then(response => obj);
+}
+export function getAllRouteMobs(obj) { 
+    return request
+        .get("http://localhost:3000/api/mob/mobs/route")
+        .send(1)
+    .then(response => response.body);
 }

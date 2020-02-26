@@ -1,7 +1,7 @@
 body {
     background-color: #212529 ;
     color: aliceblue;
-    background-image:url(./images/Backgrounds-download-phoenix-bird-wallpaper.jpg);
+    background-image:url(./images/phoenix-2877486_1920.jpg);
     background-size: 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@ a:link {
   }
   
   a:visited {
-    color: #FFA71A   ;
+    color: #FFA71A   am
   }
 
   a:hover {
@@ -38,11 +38,17 @@ a:link {
   }
   .container {
     margin: 0 auto;
-    width: 80vh;
+    width: 95vh;
+    display: flex;
+    flex-direction: row;
   }
   .panel {
     background-color: rgba(255, 167, 26, 0.466);
-    border-radius: 25px;
     padding: 1em;
-    color: black;
+    color:white;
+    border-radius: 5px;
+    border: 5px;
+    box-shadow: inset 0px 0px 205px rgba(68,68,68,0.6);
+    margin-left: 10px;
+    min-width:max-content;
   }

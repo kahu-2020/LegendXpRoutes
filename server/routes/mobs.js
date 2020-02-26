@@ -10,6 +10,15 @@ router.get("/mobs", (req, res) => {
       res.status(500).send(err.message);
     });
 });
+router.get("/mobs", (req, res) => {
+  db.getRouteMobs()
+    .then(mob => {
+      res.json(mob);
+    })
+    .catch(err => {
+      res.status(500).send(err.message);
+    });
+});
 router.get("/mobs/era/:era", (req, res) => {
   db.getMobsByEra()
     .then(mob => {
@@ -38,5 +47,13 @@ router.post("/addtoxproute", (req, res) => {
     res.status(500).send(err.message);
   }
 });
+router.get("/mobs/route", (req, res) => {
+  db.getRouteMobs()
+    .then(mob => {
+      res.json(mob);
+    })
+    .catch(err => {
+      res.status(500).send(err.message);
+    });
+});
 module.exports = router;
-5

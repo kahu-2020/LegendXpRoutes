@@ -7,7 +7,7 @@ class Nav extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      showBurger: false
+      showBurger: true
     }
     this.toggleBurger = this.toggleBurger.bind(this)
   }

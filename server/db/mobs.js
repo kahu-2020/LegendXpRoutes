@@ -30,6 +30,12 @@ function addMobToRoute(mobID, userID, db = connection) {
     .then()
 }
 
+// function getRouteMobsByEra(id, db = connection){
+//   return db("xproutes")
+//   .join('mobs', 'mobs.id', '=', 'mob_id')
+//     .select()
+//     .where({ user_id: 1, era:era})
+// }
 module.exports = {
   getMobs,
   getMobsByEra,

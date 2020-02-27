@@ -56,4 +56,15 @@ router.get("/mobs/route", (req, res) => {
       res.status(500).send(err.message);
     });
 });
+
+// router.get("/mobs/routebyera", (req, res) => {
+//   db.getRouteMobsByEra(obj)
+//     .then(mob => {
+//       res.json(mob);
+//     })
+//     .catch(err => {
+//       res.status(500).send(err.message);
+//     });
+// });
+
 module.exports = router;

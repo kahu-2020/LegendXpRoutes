@@ -10,9 +10,10 @@ import Main from "./main";
 export function App({ auth }) {
   return (
     <Router>
+      <Nav />
       <div className="container">
         <Link to="/" className="">
-          <h1 className=""></h1>
+
         </Link>
     
         <Main />

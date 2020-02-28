@@ -22,23 +22,23 @@ export const setRouteMobs = mobs => {
         mobs: mobs  
     }
 }
-export function fetchmobs() {
+export function fetchmobs(obj) {
     return dispatch => {
-        return getallmobs().then(mobs => {
+        return getallmobs(obj).then(mobs => {
            return dispatch(setmobs(mobs))
            
         })
     }
 }
-export function addtoRoute(mobID, userID) {
+export function addtoRoute(obj) {
     return dispatch => {
-        addmobtoroute(mobID, userID)
-        return dispatch(fetchRouteMobs(1))
+        addmobtoroute(obj)
+        return dispatch(fetchRouteMobs(obj))
     }
 }
-export function fetchRouteMobs(int) {
+export function fetchRouteMobs(obj) {
     return dispatch => {
-        return getAllRouteMobs(int).then(mobs => {
+        return getAllRouteMobs(obj).then(mobs => {
             return dispatch(setRouteMobs(mobs))
         })
     }

@@ -41,8 +41,8 @@ th {
 }
 .container {
   margin: 0 auto;
-  width: 95vh;
   display: flex;
+  justify-content: center;
   flex-direction: row;
 }
 .panel {
@@ -55,7 +55,8 @@ th {
   margin-left: 10px;
   min-width: max-content;
 }
-.eracontainer{
+.eracontainer {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -72,8 +73,8 @@ th {
 .eratitle h2 {
   font-size: 3em;
   font-weight: bold;
-  color:#ffa71a;
-  font-family: 'Anton';
+  color: #ffa71a;
+  font-family: "Anton";
   /* background-color: #000000;
   color: transparent;
   text-shadow: 0px 2px 3px rgba(255,167,26,0.5);
@@ -94,7 +95,6 @@ th {
   margin-left: 1em;
 }
 .flip-card {
-
   position: relative;
   width: 100%;
   height: 100%;
@@ -156,24 +156,76 @@ th {
 .flip-card-three {
   background-image: url(./images/indus.jpg);
   background-repeat: no-repeat;
-
 }
 .navbar {
-  height: 8vh;
-  background-color: #ffa71a;
+  height: 90px;
+ background: linear-gradient(to right, #ffa71a 90%,black 10%);
+
 }
 .navbar h1 {
-  font-family: 'Anton';
+  font-family: "Anton";
   background-color: #000000;
   color: transparent;
-  text-shadow: 0px 2px 3px rgba(255,167,26,0.5);
+  text-shadow: 0px 2px 3px rgba(255, 167, 26, 0.5);
   -webkit-background-clip: text;
-     -moz-background-clip: text;
-          background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
 }
-.navcontainer{
+.navcontainer {
   padding-left: 1.5em;
+  padding-right: 1.5em;
   display: flex;
-  justify-content: start;
-   line-height:8vh;
+  justify-content: space-between;
+  line-height: 90px;
+}
+
+.splash {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-image: url(./images/phoenix-2877486_1920.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.loginbutton {
+  text-align: center;
+}
+.logincontainer {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  margin-left: 43%;
+  text-align: center;
+}
+.footer {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  color: #ffa71a;
+}
+.bar {
+  position: absolute;
+  width: 100px;
+  max-height: 70.91px;
+  left: 90%;
+  top: 0;
+}
+svg {
+  display: block;
+  width: 100%;
+  height: 90px;
+  background: #ffa71a;
+}
+.link {
+  color: #ffa71a;
+  text-decoration: none;
+}
+.link-white {
+  color:white;
+  text-decoration: none;
+}
+.link-white:hover {
+  color:black;
+  text-decoration: none;
 }

@@ -2,18 +2,24 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchmobs, addtoRoute, fetchRouteMobs } from "../actions";
 
-class Select extends React.Component {
+class Modify extends React.Component {
   constructor(props) {
     super(props);
   }
   componentDidMount() {
-    this.props.dispatch(fetchmobs());
-    this.props.dispatch(fetchRouteMobs(1))
+    console.log(this.props.match.params.era);
+    let obj = {
+      userid: 1,
+      era: this.props.match.params.era
+    };
+    this.props.dispatch(fetchmobs(obj));
+    this.props.dispatch(fetchRouteMobs(obj));
   }
   handleAddClick = id => {
     const addmob = {
       mobid: id,
-      userid: 1
+      userid: 1,
+      era: this.props.match.params.era
     };
     this.props.dispatch(addtoRoute(addmob));
   };
@@ -77,4 +83,4 @@ function mapStateToProps(state) {
     route: state.routemobs
   };
 }
-export default connect(mapStateToProps)(Select);
+export default connect(mapStateToProps)(Modify);

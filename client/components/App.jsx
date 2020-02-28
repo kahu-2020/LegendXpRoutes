@@ -5,28 +5,22 @@ import { connect } from "react-redux";
 import Login from "./Login";
 import Register from "./Register";
 import Nav from "./Nav";
-import Main from "./main";
+import Footer from "./Footer";
+import Main from "./Main"
+import View from "./View"
+import Modify from "./Modify"
+
 
 export function App({ auth }) {
   return (
     <Router>
       <Nav />
-      <div className="container">
-        <Link to="/" className="">
-
-        </Link>
-    
-        <Main />
-      </div>
-
-      {/* <div className=''>
-          {!auth.isAuthenticated &&
-            <Route exact path="/" component={Login} />
-          }
-          {auth.isAuthenticated && <Main />}
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-        </div> */}
+      <Footer />
+      <Route exact path="/" component={Main}/>
+      <Route path="/register" component={Register} />
+      <Route path="/signin" component={Login} />
+      <Route path="/viewroute/:era" component={View} />
+      <Route path="/modifyroute/:era" component={Modify} />
     </Router>
   );
 }

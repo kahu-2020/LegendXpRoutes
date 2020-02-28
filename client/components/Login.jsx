@@ -1,5 +1,6 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import { Link } from "react-router-dom";
 import {loginUser, loginError} from '../actions/login'
 
 class Login extends React.Component {
@@ -26,17 +27,24 @@ class Login extends React.Component {
   render() {
     const {auth} = this.props
     return (
+      <div className="logincontainer panel vertical-center">
       <form className="" onSubmit={this.submit}>
-        <h1 className="">Login</h1>
+          <h1 className="">Login</h1>
+          <br />
         {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
-        <label className="">Username
+        <label className="">Username &nbsp;&nbsp;
           <input required className="" placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails}/>
-        </label>
-        <label className="">Password
+        </label><br />
+        <label className="">Password &nbsp;&nbsp;
           <input required className="" placeholder="Password" type="password" name="password" onChange={this.updateDetails}/>
-        </label>
-        <input className="" value='Login' type="submit" />
-      </form>
+        </label><br /><br/>
+        <input className="loginbutton" value='Login' type="submit" /><br />
+        <Link className="link" to="/register" >
+              Register?
+            </Link>
+        </form>
+        
+        </div>
     )
   }
 }

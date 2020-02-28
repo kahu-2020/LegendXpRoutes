@@ -1,9 +1,18 @@
 import request from "superagent";
 const mobs = "http://localhost:3000/api/mob/";
-export function getallmobs() {
+export function getallmobs(obj) {
   return request
     .get("http://localhost:3000/api/mob/mobs")
-    .then(response => response.body);
+    .then(response => response.body)
+    .then(era => {
+      let mobs = []
+      for (let i = 0; i < era.length; i++) {
+        if (era[i].era == obj.era) {
+          mobs.push(era[i])
+        }
+      }
+      return mobs
+      })
 }
 
 export function addmobtoroute(obj) {
@@ -15,8 +24,18 @@ export function addmobtoroute(obj) {
 export function getAllRouteMobs(obj) {
   return request
     .get("http://localhost:3000/api/mob/mobs/route")
-    .send(1)
-    .then(response => response.body);
+    .send(obj)
+    .then(response => response.body)
+    .then(era => {
+      let routemobs = []
+      for (let i = 0; i < era.length; i++) {
+        if (era[i].era == obj.era) {
+          routemobs.push(era[i])
+        }
+      }
+      return routemobs
+      })
+  
 }
 export function getXp() {
   return request

@@ -10,34 +10,6 @@ router.get("/mobs", (req, res) => {
       res.status(500).send(err.message);
     });
 });
-router.get("/mobs", (req, res) => {
-  db.getRouteMobs()
-    .then(mob => {
-      res.json(mob);
-    })
-    .catch(err => {
-      res.status(500).send(err.message);
-    });
-});
-router.get("/mobs/era/:era", (req, res) => {
-  db.getMobsByEra()
-    .then(mob => {
-      res.json(mob);
-    })
-    .catch(err => {
-      res.status(500).send(err.message);
-    });
-});
-router.get("/mobs/zone/:zone", (req, res) => {
-  db.getMobsByZone()
-    .then(mob => {
-      res.json(mob);
-    })
-    .catch(err => {
-      res.status(500).send(err.message);
-    });
-});
-
 router.post("/addtoxproute", (req, res) => {
   let info = req.body;
   try {
@@ -48,7 +20,9 @@ router.post("/addtoxproute", (req, res) => {
   }
 });
 router.get("/mobs/route", (req, res) => {
-  db.getRouteMobs()
+console.log(req.params)
+  let info = req.body;
+  db.getRouteMobs(info)
     .then(mob => {
       res.json(mob);
     })
@@ -56,15 +30,5 @@ router.get("/mobs/route", (req, res) => {
       res.status(500).send(err.message);
     });
 });
-
-// router.get("/mobs/routebyera", (req, res) => {
-//   db.getRouteMobsByEra(obj)
-//     .then(mob => {
-//       res.json(mob);
-//     })
-//     .catch(err => {
-//       res.status(500).send(err.message);
-//     });
-// });
 
 module.exports = router;

@@ -32,32 +32,30 @@ class Register extends React.Component {
   render() {
     const {auth} = this.props
     return (
+      <div className="register" >
+        <div className="register-panel vertical-center">
       <form className="" onSubmit={this.submit}>
         <h1 className="">Register</h1>
-        <hr />
         {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
-        <label >Username
+        <label >Username &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <input onChange={this.updateDetails}/>
         </label>
-        <div className="">
-          <label className="">First Name
-            <input required className="" placeholder="First Name" type="text" name="first_name" onChange={this.updateDetails}/>
-          </label>
-          <label className="">Last Name
-            <input required className="" placeholder="Last Name" type="text" name="last_name" onChange={this.updateDetails}/>
-          </label>
-        </div>
         <br />
-        <div className="columns">
-          <label className="">Password
+
+          <label className="">Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input required className="" placeholder="Password" type="password" name="password" onChange={this.updateDetails}/>
-          </label>
-          <label className="">Confirm Password
+              </label>
+              <br />
+          <label className="">Confirm Password &nbsp;&nbsp;
             <input required className="" placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails}/>
           </label>
-        </div>
+            <br />
+            <br />
         <input className="" value="Register" type="submit" />
-      </form>
+          </form>
+
+          </div>
+      </div>
     )
   }
 }

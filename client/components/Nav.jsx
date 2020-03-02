@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { fetchRouteMobs } from "../actions";
 import { logoutUser } from "../actions/logout";
 import { loginUser } from "../actions/login";
 
@@ -15,29 +16,54 @@ class Nav extends React.Component {
   toggleBurger() {
     this.setState({ showBurger: !this.state.showBurger });
   }
+
+  handClick = obj => {};
+
   render() {
     const { auth, logout } = this.props;
     const { showBurger } = this.state;
     return (
       <nav className="navbar">
-        <div className="navcontainer">
-          <h1 className="">Legendmud XP Routes</h1>
-          <div className="bar">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
-  <polygon points="100 0 100 10 0 10" />
-                  </svg>
+        <div className=" ">
+          <div className="navicon glow">
+            <Link className="link-white" to="/">
+   
+              <i className="fas fa-arrow-circle-left"></i>
+            </Link>
           </div>
-              
-          {!auth.isAuthenticated && (
-            <Link className="link" to="/signin" >
+          {/* <div className="navicon glow">
+       
+            <Link className="link-white" to="/viewroute/ancient " replace>
+        
+              <h1>A</h1>
+            </Link>
+          </div>
+          <div className="navicon glow">
+            <Link className="link-white" to="/viewroute/medieval" replace>
+           
+              <h1>M</h1>
+            </Link>
+          </div>
+          <div className="navicon glow">
+            <Link className="link-white" to="/viewroute/industrial" replace>
+            
+              <h1>I </h1>
+            </Link>
+          </div>
+          <div className="navicon glow">
+            <i className="fas fa-arrow-circle-left"></i>
+          </div> */}
+
+          {/* {!auth.isAuthenticated && (
+            <Link className="link" to="/signin">
               Login
             </Link>
           )}
           {auth.isAuthenticated && (
-            <Link className="link" onClick={logout} to="/#" >
+            <Link className="link" onClick={logout} to="/#">
               Logout
             </Link>
-          )}
+          )} */}
         </div>
       </nav>
     );
@@ -53,5 +79,4 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = ({ auth }) => {
   return { auth };
 };
-
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);

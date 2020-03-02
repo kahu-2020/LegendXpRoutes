@@ -4,19 +4,24 @@ import { connect } from "react-redux";
 
 import Login from "./Login";
 import Register from "./Register";
-import Nav from "./Nav";
-import Footer from "./Footer";
 import Main from "./Main"
 import View from "./View"
 import Modify from "./Modify"
+import Title from "./Title";
+import Logout from "./Logout";
+
 
 
 export function App({ auth }) {
   return (
+   
     <Router>
-      <Nav />
-      <Footer />
-      <Route exact path="/" component={Main}/>
+      {auth.isAuthenticated && (
+      <Logout />
+      )}
+      {/* <Footer /> */}
+      <Title/>
+      <Route exact path="/" component={Main} />
       <Route path="/register" component={Register} />
       <Route path="/signin" component={Login} />
       <Route path="/viewroute/:era" component={View} />

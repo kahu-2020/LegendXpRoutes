@@ -12,6 +12,7 @@ router.get("/mobs", (req, res) => {
 });
 router.post("/addtoxproute", (req, res) => {
   let info = req.body;
+  console.log(info)
   try {
     db.addMobToRoute(info.mobid, info.userid)
     res.json({ info })
@@ -30,5 +31,13 @@ console.log(req.params)
       res.status(500).send(err.message);
     });
 });
+router.delete("/mobs/route", (req, res) => {
+  let info = req.body;
+  console.log("derp")
+  db.delMobFromRoute(info.mobid, info.userid)
+  .then(mob => {
+    res.json(mob);
+  })
+})
 
 module.exports = router;
